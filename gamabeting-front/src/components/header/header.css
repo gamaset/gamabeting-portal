@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Poetsen';
+  src: url("../../shared/fonts/PoetsenOne-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+.header {
+  display: grid;
+  height: 5em;
+  background: #4c4e4d;
+  border-bottom: 0.2em #a4b357 solid; }
+  .header__grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 1em; }
+    .header__grid-content--left .title {
+      font-family: 'Poetsen';
+      font-size: 3em;
+      background: -webkit-gradient(left top, right top, color-stop(0%, #a4b357), color-stop(20%, #75890c));
+      background-color: white;
+      background: #a4b357;
+      background: -moz-linear-gradient(left, #a4b357 0%, #75890c 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, #a4b357), color-stop(20%, #75890c));
+      background: -webkit-linear-gradient(left, #a4b357 0%, #75890c 20%);
+      background: -o-linear-gradient(left, #a4b357 0%, #75890c 20%);
+      background: -ms-linear-gradient(left, #a4b357 0%, #75890c 20%);
+      background: linear-gradient(to right, #a4b357 0%, #75890c 20%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; }
+    .header__grid-content--right {
+      text-align: right; }
+      .header__grid-content--right .login form {
+        display: inline-flex; }
+        .header__grid-content--right .login form input {
+          height: 2em;
+          font-size: 0.750em;
+          width: 13em;
+          margin-right: 1em;
+          background-color: rgba(0, 0, 0, 0.2) !important;
+          border: none;
+          border-radius: 0.4em;
+          font-weight: 100;
+          color: #d8dada;
+          padding: 0.3em 0.4em; }
+        .header__grid-content--right .login form button {
+          border: none;
+          height: 2.5em;
+          width: 6em;
+          border: 2px solid #a4b357;
+          background-color: transparent;
+          border-radius: 0.4em;
+          color: white;
+          font-size: 12px;
+          cursor: pointer; }
+          .header__grid-content--right .login form button:hover {
+            background: #a4b357; }
+  .header ::-webkit-input-placeholder {
+    color: #d8dada; }

@@ -1,0 +1,10 @@
+@import '../../shared/styles/base.scss';
+
+.games__list {
+    grid-column: 2 / 7;
+    padding-top: 2em;
+}
+
+.ticket {
+    grid-column: 7 / 9;
+}

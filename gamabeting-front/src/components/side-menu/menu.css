@@ -1,0 +1,14 @@
+.side-menu {
+  grid-column: 1 / 2;
+  height: 100%;
+  background: #4c4e4d; }
+  .side-menu .menu__content--list .list--item__link {
+    display: block;
+    padding: 0.8em 0.4em 0.8em 0.6em;
+    text-decoration: none;
+    color: #d8dada; }
+    .side-menu .menu__content--list .list--item__link:hover {
+      background: rgba(0, 0, 0, 0.2);
+      color: #768a84; }
+    .side-menu .menu__content--list .list--item__link--icon {
+      margin-right: 0.6em; }

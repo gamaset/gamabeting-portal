@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  min-height: 25em;
+  grid-gap: 1em; }
+
+.games__list {
+  grid-column: 2 / 7;
+  padding-top: 2em; }
+
+.ticket {
+  grid-column: 7 / 9; }

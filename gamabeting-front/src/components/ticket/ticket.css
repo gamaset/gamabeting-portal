@@ -1,0 +1,36 @@
+.ticket__container {
+  background: #4c4e4d;
+  color: #d8dada; }
+  .ticket__container--header {
+    text-align: center;
+    padding: 0.5em 0;
+    color: #d8dada;
+    border-bottom: 0.2em #a4b357 solid; }
+    .ticket__container--header.checkout {
+      margin: 2em 0 1em;
+      border-top: 0.2em #a4b357 solid; }
+  .ticket__container .ticket__bet {
+    padding: 0.5em 1em; }
+    .ticket__container .ticket__bet--remove {
+      text-align: end;
+      cursor: pointer; }
+    .ticket__container .ticket__bet--market, .ticket__container .ticket__bet--event {
+      display: inline-block;
+      width: 100%;
+      padding-top: 0.3em; }
+    .ticket__container .ticket__bet--market {
+      font-size: 0.875em; }
+  .ticket__container .bet__checkout--value {
+    padding: 0.5em 1em; }
+  .ticket__container .bet__checkout input {
+    padding: 0.5em;
+    width: 7em;
+    margin-right: 1em;
+    border: none; }
+  .ticket__container .bet__checkout .value__multi {
+    margin-right: 0.5em; }
+  .ticket__container .bet__checkout .bet-return {
+    display: inline-block;
+    width: 100%;
+    font-size: 0.8em;
+    margin-top: 1em; }

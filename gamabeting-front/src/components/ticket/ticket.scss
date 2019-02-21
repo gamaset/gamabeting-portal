@@ -1,0 +1,62 @@
+@import '../../shared/styles/palette.scss';
+
+.ticket__container {
+    background: $dark-grey;
+    color: $light-grey-font;
+
+    &--header {
+        text-align: center;
+        padding: 0.5em 0;
+        color: $light-grey-font;
+        border-bottom: 0.2em $light-green solid;
+
+        &.checkout {
+            margin: 2em 0 1em;
+            border-top: 0.2em $light-green solid; 
+        }
+    }
+
+
+    .ticket__bet {
+        padding: 0.5em 1em;
+
+        &--remove {
+            text-align: end;
+            cursor: pointer;
+        }
+
+        &--market, &--event {
+            display: inline-block;
+            width: 100%;
+            padding-top: 0.3em;
+        }
+
+        &--market {
+            font-size: 0.875em;
+        }
+    }
+
+    .bet__checkout {
+
+        &--value {
+            padding: 0.5em 1em
+        }
+        input {
+            padding: 0.5em;
+            width: 7em;
+            margin-right: 1em;
+            border: none;
+        }
+
+        .value__multi {
+            margin-right: 0.5em;
+        }
+
+        .bet-return {
+            display: inline-block;
+            width: 100%;
+            font-size: 0.8em;
+            margin-top: 1em;
+        }
+    }
+}

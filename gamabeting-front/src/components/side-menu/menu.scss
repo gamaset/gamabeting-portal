@@ -1,0 +1,29 @@
+@import '../../shared/styles/palette.scss';
+
+.side-menu {
+    grid-column: 1 / 2;
+    height: 100%;
+    background: $dark-grey;
+
+    .menu__content {
+        &--list {
+            .list--item {
+                &__link {
+                    display: block;
+                    padding: 0.8em 0.4em 0.8em 0.6em;
+                    text-decoration: none;
+                    color: $light-grey-font;
+
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.2);
+                        color: $medium-grey;
+                    }
+
+                    &--icon {
+                        margin-right: 0.6em;
+                    }
+                }
+            }
+        }
+    }
+}
