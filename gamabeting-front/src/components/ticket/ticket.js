@@ -13,6 +13,7 @@ type Props = {
 class Ticket extends Component<Props> {
 
     render() {
+        let teste = 0;
 
         return(
             <div className="ticket__container">
@@ -31,10 +32,10 @@ class Ticket extends Component<Props> {
                     )
                 }
                 <div className="bet__checkout">
-                <div className="ticket__container--header checkout" onClick={() => this.productTest()}>Aposta</div>
+                <div className="ticket__container--header checkout">Aposta</div>
                 <div className="bet__checkout--value">
-                    <span className="value__multi">{this.props.bet.reduce((acc, cur) => acc * cur.bet.odd, 0)} x</span>
-                    <input type="text" placeholder="Valor aposta"></input><span className="bet-return">Retornos <span className="bet-return--value">{brlFormatter.format(23000)}</span></span>
+                    <span className="value__multi">{teste = this.props.bet.reduce((acc, cur) => { return acc * parseInt(cur.bet.odd) }, 1)}  x</span>
+                    <input type="text" placeholder="Valor aposta" onChange={(e) => console.log('Value', e)}></input><span className="bet-return">Retornos <span className="bet-return--value">{brlFormatter.format(23000)}</span></span>
                 </div>
                 </div>
             </div>

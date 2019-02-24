@@ -34,92 +34,231 @@ class GameList extends Component<Props> {
         console.log('Odd', event.currentTarget.getAttribute('odd'));
     }
 
+    // games = [
+    //     {
+    //         name: 'A x B',
+    //         id: 123,
+    //         bets: [
+    //             {
+    //                 value: "empate",
+    //                 odd: "380",
+    //                 type: "propabilidades"
+    //             },
+    //             {
+    //                 value: "casa",
+    //                 odd: "420",
+    //                 type: "propabilidades"
+    //             },
+    //             {
+    //                 value: "visitante",
+    //                 odd: "2",
+    //                 type: "propabilidades"
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         name: 'C x D',
+    //         id: 456,
+    //         bets: [
+    //             {
+    //                 value: "empate",
+    //                 odd: "280",
+    //                 type: "propabilidades"
+    //             },
+    //             {
+    //                 value: "casa",
+    //                 odd: "520",
+    //                 type: "propabilidades"
+    //             },
+    //             {
+    //                 value: "visitante",
+    //                 odd: "49",
+    //                 type: "propabilidades"
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         name: 'Y x Z',
+    //         id: 789,
+    //         bets: [
+    //             {
+    //                 value: "empate",
+    //                 odd: "380",
+    //                 type: "propabilidades"
+    //             },
+    //             {
+    //                 value: "casa",
+    //                 odd: "420",
+    //                 type: "propabilidades"
+    //             },
+    //             {
+    //                 value: "visitante",
+    //                 odd: "2",
+    //                 type: "propabilidades"
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         name: 'F x H',
+    //         id: 111,
+    //         bets: [
+    //             {
+    //                 value: "empate",
+    //                 odd: "280",
+    //                 type: "propabilidades"
+    //             },
+    //             {
+    //                 value: "casa",
+    //                 odd: "520",
+    //                 type: "propabilidades"
+    //             },
+    //             {
+    //                 value: "visitante",
+    //                 odd: "49",
+    //                 type: "propabilidades"
+    //             }
+    //         ]
+    //     }
+    // ]
+
     games = [
         {
-            name: 'A x B',
-            id: 123,
-            bets: [
+          competition: {
+            id: "55",
+            name: "França - Ligue 1"
+          },
+          events: [
+            {
+              id: "29127100",
+              name: "Dijon x St Etienne",
+              timezone: "GMT",
+              openDate: "2019-02-22T18:00:00.000+0000",
+              competition: {
+                id: "55",
+                name: "França - Ligue 1"
+              },
+              markets: [
                 {
-                    value: "empate",
-                    odd: "380",
-                    type: "propabilidades"
-                },
-                {
-                    value: "casa",
-                    odd: "420",
-                    type: "propabilidades"
-                },
-                {
-                    value: "visitante",
-                    odd: "2",
-                    type: "propabilidades"
+                  marketId: "1.154895882",
+                  marketName: "Probabilidades",
+                  prices: [
+                    {
+                      odd: 3.35,
+                      description: "Dijon"
+                    },
+                    {
+                      odd: 2.26,
+                      description: "St Etienne"
+                    },
+                    {
+                      odd: 3.4,
+                      description: "Empate"
+                    }
+                  ]
                 }
-            ]
+              ]
+            },
+            {
+              id: "29127100",
+              name: "Dijon x St Etienne",
+              timezone: "GMT",
+              openDate: "2019-02-22T18:00:00.000+0000",
+              competition: {
+                id: "55",
+                name: "França - Ligue 1"
+              },
+              markets: [
+                {
+                  marketId: "1.154895882",
+                  marketName: "Probabilidades",
+                  prices: [
+                    {
+                      odd: 3.35,
+                      description: "Dijon"
+                    },
+                    {
+                      odd: 2.26,
+                      description: "St Etienne"
+                    },
+                    {
+                      odd: 3.4,
+                      "description": "Empate"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
-            name: 'C x D',
-            id: 456,
-            bets: [
+          competition: {
+            id: "55",
+            name: "França - Ligue 1"
+          },
+          events: [
+            {
+              id: "29127100",
+              name: "Dijon x St Etienne",
+              timezone: "GMT",
+              openDate: "2019-02-22T18:00:00.000+0000",
+              competition: {
+                id: "55",
+                name: "França - Ligue 1"
+              },
+              markets: [
                 {
-                    value: "empate",
-                    odd: "280",
-                    type: "propabilidades"
-                },
-                {
-                    value: "casa",
-                    odd: "520",
-                    type: "propabilidades"
-                },
-                {
-                    value: "visitante",
-                    odd: "49",
-                    type: "propabilidades"
+                  marketId: "1.154895882",
+                  marketName: "Probabilidades",
+                  prices: [
+                    {
+                      odd: 3.35,
+                      description: "Dijon"
+                    },
+                    {
+                      odd: 2.26,
+                      description: "St Etienne"
+                    },
+                    {
+                      odd: 3.4,
+                      description: "Empate"
+                    }
+                  ]
                 }
-            ]
-        },
-        {
-            name: 'Y x Z',
-            id: 789,
-            bets: [
+              ]
+            },
+            {
+              id: "29127100",
+              name: "Dijon x St Etienne",
+              timezone: "GMT",
+              openDate: "2019-02-22T18:00:00.000+0000",
+              competition: {
+                id: "55",
+                name: "França - Ligue 1"
+              },
+              markets: [
                 {
-                    value: "empate",
-                    odd: "380",
-                    type: "propabilidades"
-                },
-                {
-                    value: "casa",
-                    odd: "420",
-                    type: "propabilidades"
-                },
-                {
-                    value: "visitante",
-                    odd: "2",
-                    type: "propabilidades"
+                  marketId: "1.154895882",
+                  marketName: "Probabilidades",
+                  prices: [
+                    {
+                      odd: 3.35,
+                      description: "Dijon"
+                    },
+                    {
+                      odd: 2.26,
+                      description: "St Etienne"
+                    },
+                    {
+                      odd: 3.4,
+                      description: "Empate"
+                    }
+                  ]
                 }
-            ]
-        },
-        {
-            name: 'F x H',
-            id: 111,
-            bets: [
-                {
-                    value: "empate",
-                    odd: "280",
-                    type: "propabilidades"
-                },
-                {
-                    value: "casa",
-                    odd: "520",
-                    type: "propabilidades"
-                },
-                {
-                    value: "visitante",
-                    odd: "49",
-                    type: "propabilidades"
-                }
-            ]
+              ]
+            }
+          ]
         }
-    ]
+      ]
 
     render() {
         const { events } = this.props;
@@ -127,39 +266,39 @@ class GameList extends Component<Props> {
         return (
             <div>
                 <ul>
+                    { this.games.map(game => 
                     <div>
-                        <p className="list__title"><span className="list__title--icon"><FontAwesomeIcon icon="futbol"/></span>Teste</p>
+                        <p className="list__title"><span className="list__title--icon"><FontAwesomeIcon icon="futbol"/></span>{game.competition.name}</p>
                         <div>
                             {
-                                this.games.map(game => {
+                                this.games.map((event, i) => {
 
-                                    return <li className="items" id={game.id}>
+                                    return <li className="items" id={event.events[i].id}>
                                         <div className="teams">
                                             <FontAwesomeIcon icon="futbol"/>
                                             <div className="teams__info">
-                                                <p className="teams--home">{game.name}</p>
+                                                <p className="teams--home">{event.events[i].name}</p>
                                             </div>
                                             <div className="game">
-                                                <p className="game--date">20 de fevereiro</p>
+                                                <p className="game--date">{moment(event.events[i].openDate).format(`DD [de] MMMM`)}</p>
                                                 <p className="game--hour">17:45</p>
                                             </div>
                                         </div>
                                         <div className="challenges">
                                             {
-                                                game.bets.map(bet => {
+                                                game.events.map(bet => {
                                                     const gameInfo = {
-                                                        name: game.name,
-                                                        gameId: game.id,
-                                                        bet: {
-                                                            value: bet.value,
-                                                            odd: bet.odd,
-                                                            type: bet.type
-                                                        }
+                                                        name: bet.name,
+                                                        gameId: bet.id,
+                                                        // prices: {
+                                                        //     description: bet.markets.prices.description,
+                                                        //     odd: bet.markets.prices.odd
+                                                        // }
                                                     }
 
                                                         return <div className="challenges__bet win--home" onClick={() => this.props.getBet(gameInfo)}>
-                                                        <span className="team__title">{bet.value}</span>
-                                                        <span className="team__odd">{bet.odd}</span>
+                                                        <span className="team__title">{bet.markets.marketId}</span>
+                                                        <span className="team__odd">{bet.markets.marketName}</span>
                                                     </div>
                                                 })
                                             }
@@ -172,6 +311,8 @@ class GameList extends Component<Props> {
                             }
                         </div>
                     </div>
+                    )
+                    }
                 </ul>
             </div>
         )
