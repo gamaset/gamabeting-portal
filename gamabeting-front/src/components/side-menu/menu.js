@@ -12,26 +12,26 @@ type MenuItems = {
 }
 
 const menuItems: MenuItems[] = [
+    // {
+    //    urlLink: "/ao-vivo",
+    //    itemName: "Ao Vivo",
+    //    iconName: "video"
+    // },
     {
-       urlLink: "/ao-vivo",
-       itemName: "Ao Vivo",
-       iconName: "video"
-    },
-    {
-        urlLink: "/futebol",
+        urlLink: "/",
         itemName: "Futebol",
         iconName: "futbol"
     },
-    {
-        urlLink: "/futsal",
-        itemName: "Futsal",
-        iconName: "futbol"
-    },
-    {
-        urlLink: "/nba",
-        itemName: "NBA",
-        iconName: "basketball-ball"
-    }
+    // {
+    //     urlLink: "/futsal",
+    //     itemName: "Futsal",
+    //     iconName: "futbol"
+    // },
+    // {
+    //     urlLink: "/nba",
+    //     itemName: "NBA",
+    //     iconName: "basketball-ball"
+    // }
 ]
 
 class Menu extends Component <any, State> {

@@ -24,9 +24,25 @@
     padding: 0.5em 1em; }
   .ticket__container .bet__checkout input {
     padding: 0.5em;
-    width: 7em;
-    margin-right: 1em;
+    width: 12em;
     border: none; }
+  .ticket__container .bet__checkout .value__identifier {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em; }
+    .ticket__container .bet__checkout .value__identifier input {
+      margin-left: 1em; }
+    .ticket__container .bet__checkout .value__identifier input::-webkit-outer-spin-button,
+    .ticket__container .bet__checkout .value__identifier input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .ticket__container .bet__checkout .value__identifier input[type=number] {
+      -moz-appearance: textfield; }
+  .ticket__container .bet__checkout .tip__container {
+    text-align: center;
+    border: 1px solid #a4b357;
+    padding: 1em;
+    margin-bottom: 2em; }
   .ticket__container .bet__checkout .value__multi {
     margin-right: 0.5em; }
   .ticket__container .bet__checkout .bet-return {
@@ -34,3 +50,13 @@
     width: 100%;
     font-size: 0.8em;
     margin-top: 1em; }
+  .ticket__container .bet__checkout button {
+    width: 100%;
+    height: 28px;
+    border: none;
+    color: #d8dada;
+    font-size: 14px;
+    background-color: #75890c;
+    cursor: pointer; }
+    .ticket__container .bet__checkout button:disabled {
+      background-color: #a5a2a2; }

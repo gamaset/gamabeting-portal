@@ -23,19 +23,20 @@ class Dashboard extends Component <State> {
         const events = await getEvents();
         
         this.setState({ events });
+        console.log('Events', events)
     }
 
-    async setBetToList(bet: any) {
+    async setBetToList(events: any) {
         let betPos = null;
         const newList = this.state.betList.map((betItem, betItemIndex) => {
-            if(betItem.name === bet.name) { betPos = betItemIndex } 
+            if(betItem.eventId === events.eventId) { betPos = betItemIndex } 
             return betItem;
         });
 
         if(betPos === null) {
-            newList.push(bet)
+            newList.push(events)
         } else {
-            newList.splice(betPos, 1, bet)
+            newList.splice(betPos, 1, events)
         }
 
         await this.setState({ betList: newList });
@@ -43,7 +44,7 @@ class Dashboard extends Component <State> {
     }
 
     async removeBetFromList(betItemIndex: number) {
-        const newList = this.state.betList.filter((bet, betIndex) => betIndex !== betItemIndex);
+        const newList = this.state.betList.filter((events, betIndex) => betIndex !== betItemIndex);
 
         await this.setState({ betList: newList });
         localStorage.setItem('bets', JSON.stringify(newList));

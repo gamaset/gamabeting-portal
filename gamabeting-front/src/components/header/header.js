@@ -9,16 +9,7 @@ class Header extends Component {
             <header className="header">
                 <div className="header__grid-content">
                     <div className="header__grid-content--left">
-                        <p className="title">betWin</p>
-                    </div>
-                    <div className="header__grid-content--right">
-                        <div className="login">
-                            <form>
-                                <input type="text" placeholder="Usuário"></input>
-                                <input type="password" placeholder="Senha"></input>
-                                <button>Entrar</button>
-                            </form>
-                        </div>
+                        <p className="title">CRBet</p>
                     </div>
                 </div>
             </header>
