@@ -7,7 +7,7 @@ import { faFutbol, faBasketballBall, faCalendarAlt, faInfoCircle, faArrowRight, 
 import Header from './components/header/header';
 import Menu from './components/side-menu/menu';
 import DashboardPage from './pages/dashboard/DashboardPage';
-import Ticket from './components/ticket/ticket';
+import Footer from './components/footer/footer';
 
 import './pages/dashboard/dashboard.css';
 
@@ -27,6 +27,7 @@ class App extends Component {
               <Menu />
               <Route exact path="/" component={DashboardPage}></Route>
             </div>
+            <Footer />
           </div>
         </Switch>
       </Router>

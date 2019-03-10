@@ -65,7 +65,7 @@ class Ticket extends Component<Props, State> {
         let { oddValue, tipValue, taxId, hash } = this.state;
 
         return(
-            <form className="ticket__container">
+            <form className="ticket__container" id="ticket-form">
                 <div className="ticket__container--header">
                     Cupom de Apostas 
                 </div>
@@ -107,7 +107,7 @@ class Ticket extends Component<Props, State> {
                 hash && 
                 <div className="hash-overlay">
                     <div className="hash__content" id="modal">
-                        <div className="content--close" onClick={() => this.props.clear('modal')}>x</div>
+                        <div className="content--close" onClick={() => this.props.clear('modal', 'ticket-form')}>x</div>
                         <span className="content--subs">Informe o código abaixo ao seu operador</span>
                         <span className="content--hash">{hash}</span>
                     </div>

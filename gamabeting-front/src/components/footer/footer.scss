@@ -1,0 +1,7 @@
+@import '../../shared/styles/palette.scss';
+
+.footer {
+    background-color: $dark-grey;
+    height: 5em;
+    border-top: 0.2em $light-green solid;
+}

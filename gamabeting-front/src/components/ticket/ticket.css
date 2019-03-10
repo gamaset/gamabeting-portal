@@ -59,7 +59,8 @@
     background-color: #75890c;
     cursor: pointer; }
     .ticket__container .bet__checkout button:disabled {
-      background-color: #a5a2a2; }
+      background-color: #a5a2a2;
+      cursor: not-allowed; }
   .ticket__container .hash-overlay {
     height: 105%;
     position: absolute;
