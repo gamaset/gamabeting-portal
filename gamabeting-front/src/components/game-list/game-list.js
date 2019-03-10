@@ -30,8 +30,8 @@ class GameList extends Component<Props> {
             odd: event.currentTarget.getAttribute('odd')
         });
 
-        console.log('Value', event.currentTarget.getAttribute('value'));
-        console.log('Odd', event.currentTarget.getAttribute('odd'));
+        // console.log('Value', event.currentTarget.getAttribute('value'));
+        // console.log('Odd', event.currentTarget.getAttribute('odd'));
     }
 
     render() {
@@ -64,6 +64,7 @@ class GameList extends Component<Props> {
                                                        return { 
                                                             eventName: event.name,
                                                             eventId: event.id,
+                                                            eventDate: event.openDate,
                                                             competition: {
                                                               id: event.competition.id,
                                                               description: event.competition.name

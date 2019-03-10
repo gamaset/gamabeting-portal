@@ -8,13 +8,15 @@ import './ticket.css';
 
 type Props = {
     bet: Array<any>,
-    removeBet: () => any
+    removeBet: () => any,
+    clear: () => any
 }
 
 type State ={
     oddValue: number,
     tipValue: number,
-    name: string
+    name: string,
+    betHash: string
 }
 
 class Ticket extends Component<Props, State> {
@@ -31,16 +33,16 @@ class Ticket extends Component<Props, State> {
       }
 
       async sendTicket() {
-        const sendData = {
-            betValue: this.state.tipValue,
-            taxId: this.state.taxId,
-            events: this.props.bet
+            this.setState({hash: null})
+            const sendData = {
+                betValue: this.state.tipValue,
+                taxId: this.state.taxId,
+                events: this.props.bet
 
-        };
+            };
         let response = await sendTicket(sendData);
-        localStorage.setItem('bets', []);
-        const hash = response.hashId;
-        console.log('Hash', hash);
+        localStorage.clear();
+        this.setState({hash: response.hashId});
       }
 
       async calculateAmount(oddValue, tipValue) {
@@ -55,9 +57,12 @@ class Ticket extends Component<Props, State> {
         }
      }
 
+     closeModal() {
+         document.getElementById("modal").setAttribute('style', 'display: none');
+     }
+
     render() {
-        let { oddValue, tipValue, taxId } = this.state;
-        console.log('Bets', this.props.bet)
+        let { oddValue, tipValue, taxId, hash } = this.state;
 
         return(
             <form className="ticket__container">
@@ -98,6 +103,16 @@ class Ticket extends Component<Props, State> {
                             </div>
                         </div>
                 }
+                {
+                hash && 
+                <div className="hash-overlay">
+                    <div className="hash__content" id="modal">
+                        <div className="content--close" onClick={() => this.props.clear('modal')}>x</div>
+                        <span className="content--subs">Informe o código abaixo ao seu operador</span>
+                        <span className="content--hash">{hash}</span>
+                    </div>
+                </div>
+            }
             </form>
         )
     }

@@ -60,3 +60,26 @@
     cursor: pointer; }
     .ticket__container .bet__checkout button:disabled {
       background-color: #a5a2a2; }
+  .ticket__container .hash-overlay {
+    height: 105%;
+    position: absolute;
+    top: 17%;
+    background-color: rgba(0, 0, 0, 0.7); }
+    .ticket__container .hash-overlay .hash__content {
+      background: white;
+      width: 70%;
+      margin: 50% auto;
+      color: #000;
+      text-align: center;
+      height: 30%;
+      padding: 0.5em 1em 1em; }
+      .ticket__container .hash-overlay .hash__content .content--close {
+        float: right;
+        margin-bottom: 1em;
+        font-size: 1.2em;
+        cursor: pointer; }
+      .ticket__container .hash-overlay .hash__content .content--subs {
+        display: inline-block;
+        margin-bottom: 2em; }
+      .ticket__container .hash-overlay .hash__content .content--hash {
+        font-size: 1.3em; }

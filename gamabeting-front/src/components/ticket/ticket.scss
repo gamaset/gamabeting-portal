@@ -99,4 +99,37 @@
             }
         }
     }
+
+    .hash-overlay {
+        height: 105%;
+        position: absolute;
+        top: 17%;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        .hash__content {
+            background: white;
+            width: 70%;
+            margin: 50% auto;
+            color: #000;
+            text-align: center;
+            height: 30%;
+            padding: 0.5em 1em 1em;
+
+            .content--close {
+                float: right;
+                margin-bottom: 1em;
+                font-size: 1.2em;
+                cursor: pointer;
+            }
+
+            .content--subs {
+                display: inline-block;
+                margin-bottom: 2em;
+            }
+
+            .content--hash {
+                font-size: 1.3em;
+            }
+        }
+    }
 }

@@ -50,6 +50,12 @@ class Dashboard extends Component <State> {
         localStorage.setItem('bets', JSON.stringify(newList));
     }
 
+    async clear(elem: string) {
+        localStorage.clear();
+        this.setState({betList: []});
+        document.getElementById(elem).setAttribute('style', 'display: none');
+    }
+
     componentDidMount() {
         this.loadEvents();
     }
@@ -64,7 +70,7 @@ class Dashboard extends Component <State> {
                     <GameList events={events} getBet={bet => this.setBetToList(bet)}/>
                 </div>
                 <div className="ticket">
-                    <Ticket bet={this.state.betList && this.state.betList} removeBet={betIndex => this.removeBetFromList(betIndex)}/>
+                    <Ticket bet={this.state.betList && this.state.betList} removeBet={betIndex => this.removeBetFromList(betIndex)} clear={elem => this.clear(elem)}/>
                 </div>
             </React.Fragment>
         )
