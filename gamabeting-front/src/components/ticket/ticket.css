@@ -64,7 +64,7 @@
   .ticket__container .hash-overlay {
     height: 105%;
     position: absolute;
-    top: 17%;
+    top: 5em;
     background-color: rgba(0, 0, 0, 0.7); }
     .ticket__container .hash-overlay .hash__content {
       background: white;
@@ -72,7 +72,7 @@
       margin: 50% auto;
       color: #000;
       text-align: center;
-      height: 30%;
+      height: 7em;
       padding: 0.5em 1em 1em; }
       .ticket__container .hash-overlay .hash__content .content--close {
         float: right;
@@ -81,6 +81,6 @@
         cursor: pointer; }
       .ticket__container .hash-overlay .hash__content .content--subs {
         display: inline-block;
-        margin-bottom: 2em; }
+        margin: 1.5em 0; }
       .ticket__container .hash-overlay .hash__content .content--hash {
         font-size: 1.3em; }
