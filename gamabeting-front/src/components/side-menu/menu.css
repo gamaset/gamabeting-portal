@@ -3,6 +3,9 @@
   height: 100%;
   min-height: 100vh;
   background: #4c4e4d; }
+  @media (max-width: 599px) {
+    .side-menu {
+      display: none; } }
   .side-menu .menu__content--list .list--item__link {
     display: block;
     padding: 0.8em 0.4em 0.8em 0.6em;

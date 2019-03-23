@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { sendTicket } from '../../services/games';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// import { brlFormatter } from '../../commons/formatter';
 
 import './ticket.css';
 
@@ -57,6 +57,16 @@ class Ticket extends Component<Props, State> {
         }
      }
 
+     showTicket() {
+         document.getElementById("wrapper-ticket").setAttribute('style', 'display: block');
+         document.getElementById("ticket-form").setAttribute('style', 'display: block');
+     }
+
+     hideTicket() {
+        document.getElementById("wrapper-ticket").setAttribute('style', 'display: none');
+        document.getElementById("ticket-form").setAttribute('style', 'display: none');
+     }
+
      closeModal() {
          document.getElementById("modal").setAttribute('style', 'display: none');
      }
@@ -65,9 +75,18 @@ class Ticket extends Component<Props, State> {
         let { oddValue, tipValue, taxId, hash } = this.state;
 
         return(
+            <React.Fragment>
+            {this.props.bet && this.props.bet.length > 0 &&
+                <div className="ticket-popup__mobile" onClick={() => this.showTicket()}>
+                    <span className="bet-count">{this.props.bet.length}</span>
+                    <span className="bet-ticket-icon"><FontAwesomeIcon icon="file-invoice-dollar" /></span>
+                </div>
+            }
+            <div id="wrapper-ticket">
             <form className="ticket__container" id="ticket-form">
                 <div className="ticket__container--header">
-                    Cupom de Apostas 
+                    Cupom de Apostas
+                    <span className="close-mobile" onClick={() => this.hideTicket()}>X</span>
                 </div>
                 {
                     this.props.bet && this.props.bet.map((game, gameIndex) =>
@@ -114,6 +133,8 @@ class Ticket extends Component<Props, State> {
                 </div>
             }
             </form>
+            </div>
+            </React.Fragment>
         )
     }
 

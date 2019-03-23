@@ -1,3 +1,37 @@
+@media (max-width: 767px) {
+  .ticket-popup__mobile {
+    background-color: #a4b357;
+    position: fixed;
+    bottom: 0.5em;
+    font-size: 2em;
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    color: #fff;
+    left: 40%; }
+    .ticket-popup__mobile .bet-count {
+      font-size: 0.5em;
+      float: left;
+      border-radius: 7em;
+      background-color: #4c4e4d;
+      padding: 0.2em 0.4em; }
+    .ticket-popup__mobile .bet-ticket-icon {
+      display: inline-block;
+      margin-top: 0.5em; } }
+
+@media (min-width: 768px) {
+  .ticket-popup__mobile {
+    display: none; } }
+
+@media (max-width: 767px) {
+  #wrapper-ticket {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 3.2em; } }
+
 .ticket__container {
   background: #4c4e4d;
   color: #d8dada; }
@@ -76,11 +110,38 @@
       padding: 0.5em 1em 1em; }
       .ticket__container .hash-overlay .hash__content .content--close {
         float: right;
-        margin-bottom: 1em;
         font-size: 1.2em;
         cursor: pointer; }
       .ticket__container .hash-overlay .hash__content .content--subs {
-        display: inline-block;
-        margin: 1.5em 0; }
+        display: inline-block; }
       .ticket__container .hash-overlay .hash__content .content--hash {
         font-size: 1.3em; }
+    @media (max-width: 767px) {
+      .ticket__container .hash-overlay {
+        height: 100%;
+        top: 0; }
+        .ticket__container .hash-overlay .hash__content .content--close {
+          margin-bottom: 0.5em; }
+        .ticket__container .hash-overlay .hash__content .content--subs {
+          margin: 0.5em 0; } }
+    @media (min-width: 768px) {
+      .ticket__container .hash-overlay {
+        height: 105%;
+        top: 5em; }
+        .ticket__container .hash-overlay .hash__content .content--close {
+          margin-bottom: 1em; }
+        .ticket__container .hash-overlay .hash__content .content--subs {
+          margin: 1.5em 0; } }
+  @media (max-width: 767px) {
+    .ticket__container {
+      display: none;
+      position: absolute;
+      width: 290px;
+      right: 0; }
+      .ticket__container--header .close-mobile {
+        position: absolute;
+        right: 1em;
+        cursor: pointer; } }
+  @media (min-width: 768px) {
+    .ticket__container--header .close-mobile {
+      display: none; } }

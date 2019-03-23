@@ -1,3 +1,6 @@
+.list {
+  margin-top: 4em; }
+
 .list__title {
   background: #75890c;
   color: #eeefef;
@@ -9,6 +12,9 @@
     margin-right: 0.5em; }
   .list__title--date {
     color: #ccc; }
+
+.list__title.true ~ .list__content {
+  display: none; }
 
 .items {
   display: grid;
@@ -24,6 +30,9 @@
     display: grid;
     grid-template-columns: 2.5em 1fr 1fr;
     align-items: center; }
+    @media (max-width: 767px) {
+      .items .teams {
+        grid-column: 1 / span 6; } }
     .items .teams--home {
       padding-bottom: 0.5em; }
     .items .teams .game {
@@ -36,16 +45,21 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.8em;
     align-items: center; }
+    @media (max-width: 767px) {
+      .items .challenges {
+        grid-column: 1 / span 6; } }
     .items .challenges__bet {
+      height: 4.5em;
       display: grid;
       align-content: center;
       text-align: center;
       background: #eaeaea;
-      border-radius: 0.3em;
       padding: 0.5em;
       cursor: pointer; }
       .items .challenges__bet:hover {
         background: #d8d8d8; }
+      .items .challenges__bet:active {
+        background-color: #000; }
       .items .challenges__bet .team__title {
         padding-bottom: 0.5em; }
       .items .challenges__bet .team__odd {
@@ -54,5 +68,8 @@
     align-items: center;
     text-align: center;
     display: grid; }
+    @media (max-width: 767px) {
+      .items .detail {
+        display: none; } }
     .items .detail a {
       color: #4c4e4d; }

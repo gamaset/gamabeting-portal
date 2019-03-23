@@ -19,7 +19,10 @@ class GameList extends Component<Props> {
     constructor() {
         super();
         this.state = {
-            value: ""
+            value: "",
+            toggle: false,
+            isSelected: false,
+            selectedId: ""
         };
       }
 
@@ -34,19 +37,32 @@ class GameList extends Component<Props> {
         // console.log('Odd', event.currentTarget.getAttribute('odd'));
     }
 
+    teste(info, e) {
+        this.props.getBet(info);
+        this.addToggle(e);
+    }
+
+    async addToggle(elem) {
+        const isToggle = this.state.toggle;
+        await this.setState({selectedId: elem.currentTarget.getAttribute('id')})
+        console.log('Id', this.state.selectedId);
+    }
+
     render() {
         const { events } = this.props;
+        const { selectedId } = this.state;
 
+        console.log('id', selectedId);
         return (
-            <div>
-                <ul>
+            <React.Fragment>
+                <div className="list">
                     { events && events.map((game, i) => 
-                    <div>
-                        <p className="list__title" key={i}><span className="list__title--icon"><FontAwesomeIcon icon="futbol"/></span>{game.competition.name}</p>
-                        <div>
+                    <div className="list__container" id={i} key={i}>
+                        <div className={this.state.toggle ? `list__title ${this.state.toggle}` : "list__title"} onClick={() => this.addToggle(game) }><span className="list__title--icon"><FontAwesomeIcon icon="futbol"/></span>{game.competition.description}</div>
+                        <div className="list__content">
                             {
                                 game.events.map((event, eventIndex) => {
-                                    return <li className="items" id={event.id} key={eventIndex}>
+                                    return <div className="items" id={event.id} key={eventIndex}>
                                         <div className="teams">
                                             <FontAwesomeIcon icon="futbol"/>
                                             <div className="teams__info">
@@ -66,8 +82,8 @@ class GameList extends Component<Props> {
                                                             eventId: event.id,
                                                             eventDate: event.openDate,
                                                             competition: {
-                                                              id: event.competition.id,
-                                                              description: event.competition.name
+                                                              id: game.competition.id,
+                                                              description: game.competition.name
                                                             },
                                                             market: {
                                                               marketId: event.markets[0].marketId,
@@ -81,7 +97,7 @@ class GameList extends Component<Props> {
                                                         }
                                                     }
 
-                                                        return <div className="challenges__bet win--home" key={priceIndex} onClick={() => this.props.getBet(gameInfo(bet.selectionName, bet.odd))}>
+                                                        return <div className={`challenges__bet ${selectedId === priceIndex ? true : false}`} id={priceIndex} key={priceIndex} onClick={(e) => this.teste(gameInfo(bet.selectionName, bet.odd), e)}>
                                                         <span className="team__title">{bet.selectionName}</span>
                                                         <span className="team__odd">{bet.odd}</span>
 
@@ -92,15 +108,15 @@ class GameList extends Component<Props> {
                                         <div className="detail">
                                             <Link to="#"><FontAwesomeIcon icon="arrow-alt-circle-right" size="2x"/></Link>
                                         </div>
-                                    </li>
+                                    </div>
                                 })
                             }
                         </div>
-                    </div>
+                        </div>
                     )
                     }
-                </ul>
-            </div>
+                </div>
+            </React.Fragment>
         )
     }
 }

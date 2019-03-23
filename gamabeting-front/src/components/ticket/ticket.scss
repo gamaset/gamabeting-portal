@@ -1,10 +1,66 @@
 @import '../../shared/styles/palette.scss';
 
+@mixin mobile {
+    @media (max-width: 767px) { @content; }
+}
+
+  @mixin tablet {
+    @media (min-width: 768px){ @content; }
+}
+  
+  @mixin desktop {
+    @media (min-width: 1025px) { @content; }
+  }
+
+.ticket-popup__mobile {
+    @include mobile {
+        background-color: $light-green;
+        position: fixed;
+        bottom: 0.5em;
+        font-size: 2em;
+        width: 2em;
+        height: 2em;
+        border-radius: 2em;
+        color: #fff;
+        left: 40%;
+
+        .bet-count {
+            font-size: 0.5em;
+            float: left;
+            border-radius: 7em;
+            background-color: #4c4e4d;
+            padding: 0.2em 0.4em;
+        }
+
+        .bet-ticket-icon {
+            display: inline-block;
+            margin-top: 0.5em;
+        }
+    }
+
+    @include tablet {
+        display: none;
+    }
+}
+
+#wrapper-ticket {
+    @include mobile {
+        display: none;
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 3.2em;
+    }
+}
+
 .ticket__container {
+    
     background: $dark-grey;
     color: $light-grey-font;
 
     &--header {
+
         text-align: center;
         padding: 0.5em 0;
         color: $light-grey-font;
@@ -102,6 +158,7 @@
     }
 
     .hash-overlay {
+
         height: 105%;
         position: absolute;
         top: 5em;
@@ -118,19 +175,71 @@
 
             .content--close {
                 float: right;
-                margin-bottom: 1em;
                 font-size: 1.2em;
                 cursor: pointer;
             }
 
             .content--subs {
                 display: inline-block;
-                margin: 1.5em 0;
             }
 
             .content--hash {
                 font-size: 1.3em;
             }
         }
+
+        @include mobile {
+            height: 100%;
+            top: 0;
+
+            .hash__content {
+                .content--close {
+                    margin-bottom: 0.5em;
+                }
+
+                .content--subs {
+                    margin: 0.5em 0;
+                }
+            }
+        }
+
+        @include tablet {
+            height: 105%;
+            top: 5em;
+
+            .hash__content {
+                .content--close {
+                    margin-bottom: 1em;
+                }
+
+                .content--subs {
+                    margin: 1.5em 0;
+                }
+            }
+        }
     }
+
+    @include mobile {
+        display: none;
+        position: absolute;
+        width: 290px;
+        right: 0;
+
+        &--header {
+            .close-mobile {
+                position: absolute;
+                right: 1em;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @include tablet {
+        &--header {
+            .close-mobile {
+                display: none;
+            }
+        }
+    }
+
 }

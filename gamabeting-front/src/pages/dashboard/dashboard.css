@@ -7,6 +7,12 @@
 .games__list {
   grid-column: 2 / 7;
   padding-top: 2em; }
+  @media (max-width: 599px) {
+    .games__list {
+      grid-column: 1 / span 8; } }
 
 .ticket {
   grid-column: 7 / 9; }
+  @media (max-width: 599px) {
+    .ticket {
+      grid-column: 1 / span 8; } }
