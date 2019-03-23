@@ -48,9 +48,10 @@
         display: none;
         background: rgba(0, 0, 0, 0.5);
         position: fixed;
-        height: 100%;
+        height: 93vh;
         width: 100%;
         top: 3.2em;
+        overflow: auto;
     }
 }
 
@@ -74,7 +75,12 @@
 
 
     .ticket__bet {
-        padding: 0.5em 1em;
+        padding: 0.5em 1em 1.5em;
+        border-bottom: 0.5px solid #767676;
+
+        &:last-child {
+            border-bottom: 0;
+        }
 
         &--remove {
             text-align: end;
@@ -149,6 +155,7 @@
             font-size: 14px;
             background-color: #75890c;
             cursor: pointer;
+            margin-bottom: 1em;
 
             &:disabled {
                 background-color: #a5a2a2;

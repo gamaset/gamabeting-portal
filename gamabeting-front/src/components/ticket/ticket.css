@@ -28,9 +28,10 @@
     display: none;
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
-    height: 100%;
+    height: 93vh;
     width: 100%;
-    top: 3.2em; } }
+    top: 3.2em;
+    overflow: auto; } }
 
 .ticket__container {
   background: #4c4e4d;
@@ -44,7 +45,10 @@
       margin: 2em 0 1em;
       border-top: 0.2em #a4b357 solid; }
   .ticket__container .ticket__bet {
-    padding: 0.5em 1em; }
+    padding: 0.5em 1em 1.5em;
+    border-bottom: 0.5px solid #767676; }
+    .ticket__container .ticket__bet:last-child {
+      border-bottom: 0; }
     .ticket__container .ticket__bet--remove {
       text-align: end;
       cursor: pointer; }
@@ -91,7 +95,8 @@
     color: #d8dada;
     font-size: 14px;
     background-color: #75890c;
-    cursor: pointer; }
+    cursor: pointer;
+    margin-bottom: 1em; }
     .ticket__container .bet__checkout button:disabled {
       background-color: #a5a2a2;
       cursor: not-allowed; }

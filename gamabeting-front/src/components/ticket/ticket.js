@@ -60,11 +60,13 @@ class Ticket extends Component<Props, State> {
      showTicket() {
          document.getElementById("wrapper-ticket").setAttribute('style', 'display: block');
          document.getElementById("ticket-form").setAttribute('style', 'display: block');
+         document.getElementsByTagName("body")[0].setAttribute('style', 'overflow: hidden');
      }
 
      hideTicket() {
         document.getElementById("wrapper-ticket").setAttribute('style', 'display: none');
         document.getElementById("ticket-form").setAttribute('style', 'display: none');
+        document.getElementsByTagName("body")[0].setAttribute('style', 'overflow: auto');
      }
 
      closeModal() {

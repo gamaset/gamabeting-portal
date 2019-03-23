@@ -37,22 +37,21 @@ class GameList extends Component<Props> {
         // console.log('Odd', event.currentTarget.getAttribute('odd'));
     }
 
-    teste(info, e) {
-        this.props.getBet(info);
-        this.addToggle(e);
-    }
+    // teste(info, e) {
+    //     this.props.getBet(info);
+    //     this.addToggle(e);
+    // }
 
-    async addToggle(elem) {
-        const isToggle = this.state.toggle;
-        await this.setState({selectedId: elem.currentTarget.getAttribute('id')})
-        console.log('Id', this.state.selectedId);
-    }
+    // async addToggle(elem) {
+    //     const isToggle = this.state.toggle;
+    //     await this.setState({selectedId: elem.currentTarget.getAttribute('id')})
+    //     console.log('Id', this.state.selectedId);
+    // }
 
     render() {
         const { events } = this.props;
         const { selectedId } = this.state;
 
-        console.log('id', selectedId);
         return (
             <React.Fragment>
                 <div className="list">
@@ -97,7 +96,7 @@ class GameList extends Component<Props> {
                                                         }
                                                     }
 
-                                                        return <div className={`challenges__bet ${selectedId === priceIndex ? true : false}`} id={priceIndex} key={priceIndex} onClick={(e) => this.teste(gameInfo(bet.selectionName, bet.odd), e)}>
+                                                        return <div className="challenges__bet" id={priceIndex} key={priceIndex} onClick={() => this.props.getBet(gameInfo(bet.selectionName, bet.odd))}>
                                                         <span className="team__title">{bet.selectionName}</span>
                                                         <span className="team__odd">{bet.odd}</span>
 
