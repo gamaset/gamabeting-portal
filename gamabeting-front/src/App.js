@@ -6,8 +6,9 @@ import { faFutbol, faBasketballBall, faCalendarAlt, faInfoCircle, faArrowRight, 
 
 import Header from './components/header/header';
 import Menu from './components/side-menu/menu';
-import DashboardPage from './pages/dashboard/DashboardPage';
 import Footer from './components/footer/footer';
+import DashboardPage from './pages/dashboard/DashboardPage';
+import EventsDetails from './pages/eventsDetails/EventsDetailsPage';
 
 import './pages/dashboard/dashboard.css';
 
@@ -26,6 +27,7 @@ class App extends Component {
             <div className="container">
               <Menu />
               <Route exact path="/" component={DashboardPage}></Route>
+              <Route exact path="/evento/:competitionId/:eventId" component={EventsDetails}></Route>
             </div>
             <Footer />
           </div>

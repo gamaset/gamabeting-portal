@@ -20,9 +20,7 @@ class GameList extends Component<Props> {
         super();
         this.state = {
             value: "",
-            toggle: false,
-            isSelected: false,
-            selectedId: ""
+            toggle: false
         };
       }
 
@@ -37,20 +35,8 @@ class GameList extends Component<Props> {
         // console.log('Odd', event.currentTarget.getAttribute('odd'));
     }
 
-    // teste(info, e) {
-    //     this.props.getBet(info);
-    //     this.addToggle(e);
-    // }
-
-    // async addToggle(elem) {
-    //     const isToggle = this.state.toggle;
-    //     await this.setState({selectedId: elem.currentTarget.getAttribute('id')})
-    //     console.log('Id', this.state.selectedId);
-    // }
-
     render() {
         const { events } = this.props;
-        const { selectedId } = this.state;
 
         return (
             <React.Fragment>
@@ -63,9 +49,8 @@ class GameList extends Component<Props> {
                                 game.events.map((event, eventIndex) => {
                                     return <div className="items" id={event.id} key={eventIndex}>
                                         <div className="teams">
-                                            <FontAwesomeIcon icon="futbol"/>
                                             <div className="teams__info">
-                                                <p className="teams--home">{event.name}</p>
+                                                <Link to={`evento/${game.competition.id}/${event.id}`} className="teams--home">{event.name}</Link>
                                             </div>
                                             <div className="game">
                                                 <p className="game--date">{moment(event.openDate).format(`DD [de] MMMM`)}</p>
@@ -96,7 +81,7 @@ class GameList extends Component<Props> {
                                                         }
                                                     }
 
-                                                        return <div className="challenges__bet" id={priceIndex} key={priceIndex} onClick={() => this.props.getBet(gameInfo(bet.selectionName, bet.odd))}>
+                                                        return <div className="challenges__bet" key={priceIndex} onClick={() => this.props.getBet(gameInfo(bet.selectionName, bet.odd))}>
                                                         <span className="team__title">{bet.selectionName}</span>
                                                         <span className="team__odd">{bet.odd}</span>
 

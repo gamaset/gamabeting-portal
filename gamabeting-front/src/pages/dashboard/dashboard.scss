@@ -30,6 +30,7 @@
 .games__list {
     @include for-phone-only {
         grid-column: 1 / span 8; 
+        padding-top: 1em;
     }
 
     grid-column: 2 / 7;

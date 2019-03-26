@@ -1,0 +1,5 @@
+.event-details--container {
+  grid-column: 1 / span 8; }
+
+.event-details__name {
+  margin-top: 5em; }

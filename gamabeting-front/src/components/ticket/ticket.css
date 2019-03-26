@@ -142,7 +142,8 @@
       display: none;
       position: absolute;
       width: 290px;
-      right: 0; }
+      right: 0;
+      padding-bottom: 4em; }
       .ticket__container--header .close-mobile {
         position: absolute;
         right: 1em;
