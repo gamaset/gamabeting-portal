@@ -2,9 +2,10 @@
 
     &--container {
         grid-column: 1 / span 8;
+        margin-top: 5em;
     }
 
     &__name {
-        margin-top: 5em;
+        margin-top: 1em;
     }
 }

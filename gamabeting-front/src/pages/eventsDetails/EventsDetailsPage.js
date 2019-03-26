@@ -78,6 +78,7 @@ class EventsDetails extends Component <State> {
                 
                 { events &&
                     <div className="event-details--container">
+                        <div>{events.competition.eventType.name}: {events.competition.countryCode} - {events.competition.description}</div>
                         <div className="event-details__name">{events.events[0].name} - {moment(events.events[0].openDate).format(`DD [de] MMMM`)}</div>
                         <div className="games__list">
                             <EventList events={events && events} getBet={bet => this.setBetToList(bet)}/>
