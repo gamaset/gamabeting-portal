@@ -36,7 +36,9 @@
     .items .teams__info {
       grid-column: 1 / 3; }
     .items .teams--home {
-      padding-bottom: 0.5em; }
+      padding-bottom: 0.5em;
+      text-decoration: none;
+      color: #768a84; }
     .items .teams .game {
       color: #768a84; }
       .items .teams .game--date {

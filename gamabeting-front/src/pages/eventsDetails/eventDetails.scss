@@ -1,11 +1,43 @@
+@mixin mobile {
+    @media (max-width: 767px) { @content; }
+}
+
+  @mixin tablet {
+    @media (min-width: 768px){ @content; }
+}
+  
+  @mixin desktop {
+    @media (min-width: 1025px) { @content; }
+  }
+
 .event-details {
 
-    &--container {
-        grid-column: 1 / span 8;
-        margin-top: 5em;
+
+    @include mobile {
+        &--container {
+            grid-column: 1 / span 8;
+            margin-top: 5em;
+        }
+
+        &__name {
+            margin-top: 1em;
+        }
     }
 
-    &__name {
-        margin-top: 1em;
+    @include tablet {
+        &--container {
+            grid-column: 2 / 7;
+            padding-top: 2em;
+        }
     }
 }
+
+.ticket {
+    @include mobile(){
+      grid-column: 1 / span 8;
+    }
+    
+    @include tablet {
+        grid-column: 7 / 9;
+    }
+  }

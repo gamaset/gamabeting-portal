@@ -1,6 +1,19 @@
-.event-details--container {
-  grid-column: 1 / span 8;
-  margin-top: 5em; }
+@media (max-width: 767px) {
+  .event-details--container {
+    grid-column: 1 / span 8;
+    margin-top: 5em; }
+  .event-details__name {
+    margin-top: 1em; } }
 
-.event-details__name {
-  margin-top: 1em; }
+@media (min-width: 768px) {
+  .event-details--container {
+    grid-column: 2 / 7;
+    padding-top: 2em; } }
+
+@media (max-width: 767px) {
+  .ticket {
+    grid-column: 1 / span 8; } }
+
+@media (min-width: 768px) {
+  .ticket {
+    grid-column: 7 / 9; } }

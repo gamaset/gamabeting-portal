@@ -9,7 +9,7 @@ class Header extends Component {
             <header className="header">
                 <div className="header__grid-content">
                     <div className="header__grid-content--left">
-                        <p className="title">CRBet</p>
+                        <p className="title">CRBets</p>
                     </div>
                 </div>
             </header>

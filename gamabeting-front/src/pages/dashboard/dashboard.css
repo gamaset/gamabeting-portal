@@ -10,7 +10,7 @@
   @media (max-width: 599px) {
     .games__list {
       grid-column: 1 / span 8;
-      padding-top: 1em; } }
+      padding-top: 3em; } }
 
 .ticket {
   grid-column: 7 / 9; }
