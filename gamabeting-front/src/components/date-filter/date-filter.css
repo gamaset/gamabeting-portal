@@ -1,0 +1,24 @@
+.period-filter {
+  margin-top: 2em; }
+  @media (max-width: 767px) {
+    .period-filter {
+      margin-top: 4em; } }
+  .period-filter__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 767px) {
+      .period-filter__items {
+        padding: 0 1em; } }
+    .period-filter__items .item {
+      background-color: #4c4e4d;
+      height: 3em;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #eeefef;
+      border: 1px solid #75890c;
+      color: #75890c; }
+      .period-filter__items .item.active {
+        background-color: #75890c;
+        color: white; }

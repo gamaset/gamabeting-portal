@@ -30,9 +30,6 @@ class GameList extends Component<Props> {
             value: event.currentTarget.getAttribute('value'),
             odd: event.currentTarget.getAttribute('odd')
         });
-
-        // console.log('Value', event.currentTarget.getAttribute('value'));
-        // console.log('Odd', event.currentTarget.getAttribute('odd'));
     }
 
     render() {

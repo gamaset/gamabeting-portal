@@ -13,8 +13,8 @@ const baseUrl = 'http://3.89.202.205:8280/crbets/api';
 // const baseUrl = 'http://3.89.202.205:8280/crbets/api';
 
 
-export const getEvents = async () => {
-    const response = await axiosInstance.get(`${baseUrl}/v1/event-types/1/events?period=TODAY`);
+export const getEvents = async (period: string) => {
+    const response = await axiosInstance.get(`${baseUrl}/v1/event-types/1/events?period=${period}`);
     return response.data.data;
 }
 

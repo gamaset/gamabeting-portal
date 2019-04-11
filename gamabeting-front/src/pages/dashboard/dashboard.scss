@@ -2,35 +2,30 @@
 
 @import '../../shared/styles/palette.scss';
 
-@mixin for-phone-only {
-    @media (max-width: 599px) { @content; }
-  }
-  @mixin for-tablet-portrait-up {
-    @media (min-width: 600px) { @content; }
-  }
-  @mixin for-tablet-portait-only {
-    @media (min-width: 600px) and (max-width: 899px) { @content; }
-  }
-  @mixin for-tablet-landscape-up {
-    @media (min-width: 900px) { @content; }
-  }
-  @mixin for-tablet-landscape-only {
-    @media (min-width: 900px) and (max-width: 1199px) { @content; }
-  }
-  @mixin for-desktop-up {
-    @media (min-width: 1200px) { @content; }
-  }
-  @mixin for-desktop-only {
-    @media (min-width: 1200px) and (max-width: 1799px) { @content; }
-  }
-  @mixin for-big-desktop-up {
-    @media (min-width: 1800px) { @content; }
+@mixin mobile {
+  @media (max-width: 767px) { @content; }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1024px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) { @content; }
+}
+
+.period__filters {
+  @include mobile {
+    grid-column: 1 / 9;
   }
 
+  grid-column: 2 / 5;
+} 
+
 .games__list {
-    @include for-phone-only {
-        grid-column: 1 / span 8; 
-        padding-top: 3em;
+    @include mobile {
+        grid-column: 1 / span 8;
+        padding-top: 0;
     }
 
     grid-column: 2 / 7;
@@ -38,9 +33,11 @@
 }
 
 .ticket {
-  @include for-phone-only {
+  @include mobile {
     grid-column: 1 / span 8;
   }
   
   grid-column: 7 / 9;
+  grid-row: 1 / auto; 
+
 }

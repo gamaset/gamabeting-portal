@@ -3,10 +3,12 @@ import { getEvents } from '../../services/games';
 
 import GameList from '../../components/game-list/game-list';
 import Ticket from '../../components/ticket/ticket';
+import DateFilter from '../../components/date-filter/date-filter';
 
 type State = {
     events?: Array<any>,
-    bet?: Array<any>
+    bet?: Array<any>,
+    period?: string
 }
 
 class Dashboard extends Component <State> {
@@ -14,13 +16,14 @@ class Dashboard extends Component <State> {
     constructor() {
         super();
         this.state = {
-            betList: JSON.parse(localStorage.getItem('bets')) || []
+            betList: JSON.parse(localStorage.getItem('bets')) || [],
+            period: "TODAY"
         };
     }
 
     async loadEvents() {
         this.setState({ events: null });
-        const events = await getEvents();
+        const events = await getEvents(this.state.period);
         
         this.setState({ events });
     }
@@ -56,6 +59,11 @@ class Dashboard extends Component <State> {
         document.getElementById(formId).reset();
     }
 
+    async changeDate(period) {
+        await this.setState({ period: period });
+        this.loadEvents();
+    }
+
     componentDidMount() {
         this.loadEvents();
     }
@@ -66,6 +74,9 @@ class Dashboard extends Component <State> {
 
         return(
             <React.Fragment>
+                <div className="period__filters">
+                    <DateFilter changeDate={(period) => this.changeDate(period)}/>
+                </div>
                 <div className="games__list">
                     <GameList events={events} getBet={bet => this.setBetToList(bet)}/>
                 </div>

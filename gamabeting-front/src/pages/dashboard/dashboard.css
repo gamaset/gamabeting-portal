@@ -3,17 +3,27 @@
   grid-template-columns: repeat(8, 1fr);
   min-height: 25em;
   grid-gap: 1em; }
+  @media (min-width: 1025px) {
+    .container {
+      grid-template-rows: 3em auto; } }
+
+.period__filters {
+  grid-column: 2 / 5; }
+  @media (max-width: 767px) {
+    .period__filters {
+      grid-column: 1 / 9; } }
 
 .games__list {
   grid-column: 2 / 7;
   padding-top: 2em; }
-  @media (max-width: 599px) {
+  @media (max-width: 767px) {
     .games__list {
       grid-column: 1 / span 8;
-      padding-top: 3em; } }
+      padding-top: 0; } }
 
 .ticket {
-  grid-column: 7 / 9; }
-  @media (max-width: 599px) {
+  grid-column: 7 / 9;
+  grid-row: 1 / auto; }
+  @media (max-width: 767px) {
     .ticket {
       grid-column: 1 / span 8; } }

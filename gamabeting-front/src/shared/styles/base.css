@@ -3,3 +3,6 @@
   grid-template-columns: repeat(8, 1fr);
   min-height: 25em;
   grid-gap: 1em; }
+  @media (min-width: 1025px) {
+    .container {
+      grid-template-rows: 3em auto; } }

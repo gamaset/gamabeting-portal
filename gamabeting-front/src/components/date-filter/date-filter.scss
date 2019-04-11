@@ -1,0 +1,48 @@
+@import '../../shared/styles/palette.scss';
+
+@mixin mobile {
+    @media (max-width: 767px) { @content; }
+}
+
+  @mixin tablet {
+    @media (min-width: 768px) and (max-width: 1024px) { @content; }
+}
+  
+  @mixin desktop {
+    @media (min-width: 1025px) { @content; }
+  }
+
+.period-filter {
+
+    @include mobile {
+        margin-top: 4em;
+    }
+    
+    margin-top: 2em;
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include mobile {
+            padding: 0 1em;
+        }
+
+        .item {
+            background-color: #4c4e4d;
+            height: 3em;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eeefef;
+            border: 1px solid $medium-green;
+            color: $medium-green;
+
+            &.active {
+                background-color: $medium-green;
+                color: white;
+            }
+        }
+    }
+}
