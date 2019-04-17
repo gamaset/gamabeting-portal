@@ -33,8 +33,6 @@ class DateFilter extends Component<Props, any> {
         this.setState({
           active: name
         });
-        // e.stopPropagation();
-        console.log('Active', this.state.active)
       }
 
     render() {

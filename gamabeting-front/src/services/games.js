@@ -27,3 +27,8 @@ export const getEventsDetails = async (competition: string, event: string) => {
     const response = await axiosInstance.get(`${baseUrl}/v1/event-types/1/competitions/${competition}/events/${event}`);
     return response.data;
 }
+
+export const getSideBar = async () => {
+    const response = await axiosInstance.get(`${baseUrl}/v1/portal/shared/sidebar`);
+    return response.data.data;
+}
