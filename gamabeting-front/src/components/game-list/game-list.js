@@ -54,7 +54,7 @@ class GameList extends Component<Props> {
                                             </div>
                                             <div className="game">
                                                 <p className="game--date">{moment(event.openDate).format(`DD [de] MMMM`)}</p>
-                                                <p className="game--hour">17:45</p>
+                                                <p className="game--hour">{moment(event.openDate).format(`HH:mm`)}</p>
                                             </div>
                                         </div>
                                         <div className="challenges">

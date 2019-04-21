@@ -41,7 +41,7 @@ class Menu extends Component <any, State> {
       }
 
     componentWillMount() {
-        this.loadMenuOptions();
+        // this.loadMenuOptions();
     }
 
     render() {

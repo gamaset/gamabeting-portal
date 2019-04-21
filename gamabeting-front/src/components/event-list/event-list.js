@@ -50,10 +50,10 @@ class GameList extends Component<Props> {
                                              eventName: events.events[0].name,
                                              eventId: events.events[0].id,
                                              eventDate: events.events[0].openDate,
-                                             // competition: {
-                                             //   id: game.competition.id,
-                                             //   description: game.competition.name
-                                             // },
+                                             competition: {
+                                               id: events.competition.id,
+                                               description: events.competition.name
+                                             },
                                              market: {
                                                marketId: market.marketId,
                                                marketName: market.marketName,
