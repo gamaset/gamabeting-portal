@@ -36,8 +36,6 @@ class Menu extends Component <any, State> {
         await this.setState({
           active: name
         });
-
-        console.log('Active', this.state.active);
       }
 
     componentWillMount() {

@@ -20,9 +20,15 @@ class GameList extends Component<Props> {
         super();
         this.state = {
             value: "",
-            toggle: false
+            active: ""
         };
-      }
+    }
+
+    async active(name: string) {
+        await this.setState({
+          active: name
+        });
+    }
 
     async loadName(event) {
         this.setState(
@@ -43,7 +49,7 @@ class GameList extends Component<Props> {
                 <div className="list">
                     { events && events.map((game, i) => 
                     <div className="list__container" id={i} key={i}>
-                        <div className={this.state.toggle ? `list__title ${this.state.toggle}` : "list__title"} onClick={() => this.addToggle(game) }><span className="list__title--icon"><FontAwesomeIcon icon="futbol"/></span>{game.competition.description}</div>
+                        <div className="list__title" ><span className="list__title--icon"><FontAwesomeIcon icon="futbol"/></span>{game.competition.description}</div>
                         <div className="list__content">
                             {
                                 game.events.map((event, eventIndex) => {
@@ -81,7 +87,7 @@ class GameList extends Component<Props> {
                                                         }
                                                     }
 
-                                                        return <div className="challenges__bet" key={priceIndex} onClick={() => this.props.getBet(gameInfo(bet.selectionName, bet.odd))}>
+                                                        return <div className={this.state.active === bet.selectionName ? "challenges__bet active" : "challenges__bet"} key={priceIndex} onClick={() => {this.props.getBet(gameInfo(bet.selectionName, bet.odd)); this.active(bet.selectionName)}}>
                                                         <span className="team__title">{bet.selectionName}</span>
                                                         <span className="team__odd">{bet.odd}</span>
 

@@ -16,7 +16,8 @@ type State ={
     oddValue: number,
     tipValue: number,
     name: string,
-    betHash: string
+    betHash: string,
+    error: string
 }
 
 class Ticket extends Component<Props, State> {
@@ -33,16 +34,25 @@ class Ticket extends Component<Props, State> {
       }
 
       async sendTicket() {
-            this.setState({hash: null})
+            this.setState({hash: null, error: null})
             const sendData = {
                 betValue: this.state.tipValue,
                 taxId: this.state.taxId,
                 events: this.props.bet
 
             };
-        let response = await sendTicket(sendData);
-        localStorage.clear();
-        this.setState({hash: response.hashId});
+
+        try{
+            let response = await sendTicket(sendData);
+            localStorage.clear();
+            this.setState({hash: response.hashId});
+            console.log('Response', response);
+
+        }catch(err){
+            this.setState({error: err.message});
+            console.log('err: ' + JSON.stringify(err.message));
+        }
+
       }
 
       async calculateAmount(oddValue, tipValue) {
@@ -74,7 +84,7 @@ class Ticket extends Component<Props, State> {
      }
 
     render() {
-        let { oddValue, tipValue, taxId, hash } = this.state;
+        let { oddValue, tipValue, hash, error } = this.state;
 
         return(
             <React.Fragment>
@@ -133,7 +143,17 @@ class Ticket extends Component<Props, State> {
                         <span className="content--hash">{hash}</span>
                     </div>
                 </div>
-            }
+                }
+                {
+                error &&
+                <div className="hash-overlay">
+                    <div className="hash__content" id="modal">
+                        <div className="content--close" onClick={() => this.closeModal()}>x</div>
+                        <span className="content--subs">Erro no envio do bilhete</span>
+                        <span className="content--hash">{error}</span>
+                    </div>
+                </div>
+                }
             </form>
             </div>
             </React.Fragment>
