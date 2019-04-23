@@ -28,8 +28,9 @@
         padding-top: 0;
     }
 
-    grid-column: 2 / 7;
-    padding-top: 2em;
+    @include desktop {
+      grid-column: 2 / 7;
+    }
 }
 
 .ticket {

@@ -30,6 +30,12 @@
             padding-top: 2em;
         }
     }
+
+    @include desktop {
+      &--container {
+        grid-row: 1 / span 2;
+      }
+    }
 }
 
 .ticket {

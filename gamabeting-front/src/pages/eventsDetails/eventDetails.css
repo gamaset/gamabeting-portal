@@ -10,6 +10,10 @@
     grid-column: 2 / 7;
     padding-top: 2em; } }
 
+@media (min-width: 1025px) {
+  .event-details--container {
+    grid-row: 1 / span 2; } }
+
 @media (max-width: 767px) {
   .ticket {
     grid-column: 1 / span 8; } }
