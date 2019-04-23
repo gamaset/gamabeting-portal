@@ -21,6 +21,11 @@
 
 @media (min-width: 1025px) {
   .games__list {
+    grid-column: 2 / 7;
+    margin-top: 2em; } }
+
+@media (min-width: 1025px) {
+  .event-details--container .games__list {
     grid-column: 2 / 7; } }
 
 .ticket {

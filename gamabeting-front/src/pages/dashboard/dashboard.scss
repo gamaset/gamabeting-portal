@@ -30,8 +30,15 @@
 
     @include desktop {
       grid-column: 2 / 7;
+      margin-top: 2em;
     }
 }
+
+.event-details--container .games__list {
+  @include desktop {
+    grid-column: 2 / 7;
+  }
+} 
 
 .ticket {
   @include mobile {
