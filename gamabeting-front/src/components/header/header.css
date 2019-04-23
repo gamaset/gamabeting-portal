@@ -54,14 +54,15 @@
           cursor: pointer; }
           .header__grid-content--right .login form button:hover {
             background: #a4b357; }
-  @media (max-width: 599px) {
+  @media (max-width: 767px) {
     .header {
       position: fixed;
       width: 100%;
-      height: 3em; }
+      height: 3em;
+      z-index: 99; }
       .header__grid-content--left .title {
         font-size: 2em; } }
-  @media (min-width: 900px) {
+  @media (min-width: 768px) {
     .header__grid-content--left .title {
       font-size: 3em; } }
   .header ::-webkit-input-placeholder {
